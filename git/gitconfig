@@ -1,0 +1,63 @@
+[user]
+    name = Jean Pimentel
+    email = contato@jeanpimentel.com.br
+
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[core]
+    filemode = false
+	excludesfile = ~/.gitignore
+	editor = vim
+
+[diff]
+    algorithm = patience
+
+[branch]
+	autosetuprebase = always
+
+[push]
+	default = current
+
+[rerere]
+	enabled = true
+
+[alias]
+    st = status -s
+
+    df = diff
+    dfw = diff --word-diff
+
+    unstage = reset HEAD
+    uncommit = reset --soft HEAD^
+
+    who = shortlog --summary --numbered
+
+    ll = log --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative --max-count=20
+    lll = log --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+    lltree = !git ll --graph
+    llltree = !git lll --graph
+
+    snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+    snapshots = !git stash list --grep snapshot
+
+[include]
+	path = ~/.gitconfig.user
