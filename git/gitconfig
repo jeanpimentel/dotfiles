@@ -25,20 +25,20 @@
 
 [core]
     filemode = false
-	excludesfile = ~/.gitignore
-	editor = vim
+    excludesfile = ~/.gitignore
+    editor = vim
 
 [diff]
     algorithm = patience
 
 [branch]
-	autosetuprebase = always
+    autosetuprebase = always
 
 [push]
-	default = current
+    default = current
 
 [rerere]
-	enabled = true
+    enabled = true
 
 [alias]
     st = status -s
@@ -60,4 +60,4 @@
     snapshots = !git stash list --grep snapshot
 
 [include]
-	path = ~/.gitconfig.user
+    path = ~/.gitconfig.user
