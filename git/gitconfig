@@ -59,5 +59,7 @@
     snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
     snapshots = !git stash list --grep snapshot
 
+    fuck = reset --hard HEAD
+
 [include]
     path = ~/.gitconfig.user
